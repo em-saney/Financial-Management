@@ -1,18 +1,11 @@
-let incomes = [];
-
-const addIncome = (req, res) => {
-  const { amount, description } = req.body;
-
-  if (!amount || !description) {
-    return res.status(400).json({ message: 'Invalid income amount ' });
-  }
-
-  const newIncome = { id: incomes.length + 1, amount: parseFloat(amount), description };
-  incomes.push(newIncome);
-
-  res.json({ message: 'Income was added successfully', income: newIncome });
+exports.fetchIncome = (req, res) => {
+  res.send('Fetching income');
 };
 
-module.exports = {
-  addIncome,
+exports.addIncome = (req, res) => {
+  res.send('Adding income');
+};
+
+exports.updateIncome = (req, res) => {
+  res.send('Updating income');
 };
